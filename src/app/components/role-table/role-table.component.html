@@ -1,0 +1,47 @@
+<h4 *ngIf="errorMessage" class="errorMsg">You are Not Authorized to View <br> Please Login</h4>
+
+<div class="role-table-container">
+    <div class="role-items-container">
+        @for (role of roleList; track $index)
+        {
+        <div class="role-item">
+            <div class="role-title">
+                <h5>{{role.name}}</h5>
+                <span class="icon-Edit" (click)="editRole(role.id,role.name)"></span>
+            </div>
+            <div class="role-department">
+                <div class="department-label">
+                    <span class="icon-team_1"></span>
+                    <p>Department</p>
+                </div>
+                <p>{{role.department}}</p>
+            </div>
+            <div class="role-location">
+                <div class="location-label">
+                    <span class="icon-location"></span>
+                    <p>Location</p>
+
+                </div>
+                <p>{{role.location}}</p>
+            </div>
+            <div class="role-number">
+                <p>Total Employees</p>
+                <div class="pic-group">
+                    <img src={{image1}} alt="Avatar" id="picitem-1" #picitem1/>
+                    <img src={{image2}} alt="Avatar" id="picitem-2" #picitem2/>
+                    <img src={{image3}} alt="Avatar" id="picitem-3" #picitem3/>
+                    <img src={{image4}} alt="Avatar" id="picitem-4" #picitem4/>
+                    <p id="pic-count">{{empCount}}</p>
+                </div>
+            </div>
+            <div class="view-employees" (click)="openDetails(role.id)">
+                <div class="view-label">
+                    <p>View all Employees</p>
+                    <span class="icon-Vector"></span>
+                </div>
+            </div>
+        </div>
+    }
+
+    </div>
+</div>

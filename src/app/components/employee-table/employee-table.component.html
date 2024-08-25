@@ -1,0 +1,101 @@
+<h4 *ngIf="errorMesssage" class="errorMsg">You are Not Authorized to View <br> Please Login</h4>
+
+<div class="employee-table br-5 bnone " *ngIf="!errorMesssage" >
+    <div class="employee-option fs-08" >
+        <div>
+            <i class="icon-arrow-left-down"></i>
+            <button id="deleteButton" class="cpoint br-5 bnone" (click)="deleteMultiple()">Delete</button>
+        </div>
+        <i class="icon-table-add"></i>
+    </div>
+    <table class="employeelist-head w100 br-5 bnone scroll" >
+        <thead>
+            <tr class="item-head  w100 flex-row fw-n fs-08 ">
+                <th class="head-part-1"> <input type="checkbox" id="master-checkbox" (change)="selectAll($event)">
+                </th>
+                <th class="head-part-2 flex-row" (click)="sortByName()">
+                    <p>USER</p>
+                    <i class="icon-unfold"></i>
+                </th>
+                <th class="head-part-3 flex-row" (click)="sortByLocation()">
+                    <p>LOCATION</p>
+                    <i class="icon-unfold"></i>
+                </th>
+                <th class="head-part-4 flex-row" (click)="sortByDepartment()">
+                    <p>DEPARTMENT</p>
+                    <i class="icon-unfold"></i>
+                </th>
+                <th class="head-part-5 flex-row" (click)="sortByRole()">
+                    <p class="pl-10">ROLE</p>
+                    <i class="icon-unfold"></i>
+                </th>
+                <th class="head-part-6 flex-row" (click)="sortById()">
+                    <p class="pl-10">EMP NO</p>
+                    <i class="icon-unfold"></i>
+                </th>
+                <th class="head-part-7 head-part7 flex-row">
+                    <p>STATUS</p>
+                    <i class="icon-unfold"></i>
+                </th>
+                <th class="head-part-8 flex-row" (click)="sortByJoinDt()">
+                    <p>JOIN DT</p>
+                    <i class="icon-unfold"></i>
+                </th>
+                <th class="item-more">
+                    <p>. . .</p>
+                    <!-- <div class="more-info">
+                        <i>View Details</i>
+                        <i>Edit</i>
+                        <i>Delete</i>
+                    </div> -->
+                </th>
+            </tr>
+        </thead>
+        <tbody class="employeelist-container w100  fw-n br-5 bnone ">
+            @for (item of employeeList; track $index)
+            {
+            <tr class="employeelist-item">
+                <td class="item-checkbox">
+                    <input type="checkbox" class="row-check" (change)="selectEmployee(item.id,$event)" #selectcoloumn>
+                </td>
+                <td class="item-profile">
+                    <img src={{item.imageUrl}} alt="" appZoom>
+                    <div class="rowprofile-text">
+                        <h6>{{item.firstName}} {{item.lastName}}</h6>
+                        <p>{{item.emailId}}</p>
+                    </div>
+                </td>
+                <td class="item-location">
+                    <p>{{item.location}}</p>
+                </td>
+                <td class="item-department">
+                    <p>{{item.department}}</p>
+                </td>
+                <td class="item-job">
+                    <p>{{item.roleName}}</p>
+                </td>
+                <td class="item-rollno">
+                    <p>
+                        {{item.id}}
+                    </p>
+                </td>
+                <td class="item-status">
+                    <button>Active</button>
+                </td>
+                <td class="item-date">
+                    <p>{{item.dateOfJoining}}</p>
+                </td>
+                <td class="item-more">
+                    <p>. . .</p>
+                    <div class="more-info">
+                        <span class="viewDetails" (click)="viewEmployee(item.id)">View Details</span>
+                        <span class="editDetails" (click)="editEmployee(item.id)">Edit</span>
+                        <span class="deleteDetails" (click)="deleteEmployee(item.id)">Delete</span>
+                    </div>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

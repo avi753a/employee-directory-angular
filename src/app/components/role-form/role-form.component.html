@@ -1,0 +1,66 @@
+<div class="role-form-container">
+        <h5>Create New Role</h5>
+        <form [formGroup]="roleForm" (ngSubmit)="onSubmit()">
+        <div class="newrole-details">
+            <div>
+                <label for="role-name">Role Name*</label><br>
+                <input type="text" name="role-name" id="role-name" formControlName="name">
+                <div *ngIf="f['name'].hasError('required') && (f['name'].dirty || submitted)"><small>Role Name is
+                    required.</small></div>
+            </div>
+            <div>
+                <label for="role-department">Department*</label><br>
+                <select name="roledepartment" id="role-department" formControlName="department">
+                    <option value="UI/UX">UI/UX</option>
+                    <option value="HR">HR</option>
+                    <option value="Product Dev">Product Dev</option>
+                    <option value="Design">Design</option>
+                </select>
+                <div *ngIf="f['department'].hasError('required') && (f['department'].dirty || submitted)"><small>Department is
+                    required.</small></div>
+            </div>
+        </div>
+        <div class="description-details">
+            <label for="description">Description*</label><br>
+            <textarea name="description" id="description" cols="70" rows="10"
+                formControlName="description"></textarea><br>
+            <div *ngIf="f['description'].hasError('required') && (f['description'].dirty || submitted)"><small>Description is
+                required.</small></div>
+        </div>
+        <div class="location-details">
+            <label for="location">Location*</label><br>
+            <select name="location" id="location" formControlName="location">
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Delhi">Delhi</option>
+            </select>
+            <div *ngIf="f['location'].hasError('required') && (f['location'].dirty || submitted)">Location is required.
+            </div>
+        </div>
+        <div class="assign-employees">
+            <label>Assign Employees</label>
+            <div class="assign-head">
+                <input placeholder="Search for employee">
+                <span class="icon-down-arrow"></span>
+            </div>
+            <div class="assign-container" id="assign-container">
+                @for (emp of assignemployeeList; track $index) {
+                <div class="assign-item">
+                    <div class="assignitem-name">
+                      <img [src]="emp.imageUrl" alt="Employee Image">
+                      <p>{{ emp.firstName }} {{ emp.lastName }}</p>
+                    </div>
+                    <input type="checkbox" class="assign-checkbox" [value]="emp.id" (change)="assignEmployee(emp, $event.target)">
+                  </div>
+                }
+            </div>
+        </div>
+        <div class="employment-buttons">
+            <div>
+                <button type="button" id="roleform-cancel">Cancel</button>
+                <button type="submit" id="roleform-add">Add Role</button>
+            </div>
+        </div>
+    </form>
+</div>

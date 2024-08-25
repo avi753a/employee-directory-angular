@@ -1,0 +1,47 @@
+<div class="filter-bar-container br-5">
+    <div class="filter-categories d-flex flex-row">
+        <div class="filter-text fs-08 d-flex flex-row">
+            <p>Filter</p>
+            <span class="icon-menu"></span>
+        </div>
+        <div class="filter-selection fs-08 d-flex flex-row">
+            <div class="filter-option" [class.hide]="hideStatus">
+                <button name="Status" id="status" class="br-5" (click)="toggleStatusOptions()"
+                    >Status <span class="icon-down-arrow"></span></button>
+                <div class="option-container fs-08 w100 d-flex flex-col" [class.hide]="statusOptionsHidden">
+                    <label for="active"><input type="checkbox" class="status-check" (change)="statusActive('Active',$event)" #checkboxInput
+                            value="Active">Active</label><!--<br>-->
+                    <label for="inactive"><input type="checkbox" class="status-check" (change)="statusActive('Inactive',$event)"  #checkboxInput
+                            value="Active">Inactive</label><!--<br>-->
+                </div>
+            </div>
+            <div class="filter-option">
+                <button name="Location" id="location" class="br-5" (click)="toggleLocationOptions()" #checkboxInput
+                    >Location <span class="icon-down-arrow"></span></button>
+                <div class="option-container fs-08 w100 d-flex flex-col" [class.hide]="locationOptionsHidden">
+                @for (loc of locationOptionList; track $index)
+                 {
+                    <label for={{loc}}><input type="checkbox" class="location-check" (change)="locationChange(loc,$event)"  #checkboxInput
+                        value={{loc}}>{{loc}}</label><!--<br>-->
+                 }
+
+                </div>
+            </div>
+            <div class="filter-option">
+                <button name="Department" id="department" class="br-5" (click)="toggleDepartmentOptions()" >Department <span class="icon-down-arrow"></span></button>
+                <div class="option-container fs-08 w100 d-flex flex-col" [class.hide]="departmentOptionsHidden">
+                    @for (dep of departmentOptionList; track $index)
+                    {
+                       <label for={{dep}}><input type="checkbox" class="location-check" (click)="departmentChange(dep,$event)"  #checkboxInput
+                           value={{dep}}>{{dep}}</label><!--<br>-->
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="filter-buttons br-5 d-flex flex-row" [class.hide]="isButtonHidden">
+        <button type="button" class="cpoint br-5 filter-reset" (click)="resetFilter()">Reset</button>
+        <button type="button" class="cpoint br-5 filter-apply" (click)="applyFilter()">Apply</button>
+    </div>
+</div>

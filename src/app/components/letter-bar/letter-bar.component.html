@@ -1,0 +1,13 @@
+<div class="letter-bar-container d-flex flex-row">
+    <div class="filter-icon r5" >
+        <span class="icon-filter"></span>
+    </div>
+    <div class="letter-buttons-container d-flex flex-row">
+        @for (alpha of letterArray; track $index) {
+            <div class="letter-button r5">
+                <button value="alpha" class="r5"(click)="activateBtn(alpha)" [ngClass]="{'active': alpha === selectedButton}">{{alpha}}</button>
+            </div>
+        }
+    </div>
+
+</div>

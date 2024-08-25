@@ -1,0 +1,44 @@
+<div class="role-detail-container">
+    <div class="role-description">
+        <h6>{{role.name}}</h6>
+        <p>{{role.description}}</p>
+    </div>
+    <div class="people-details">
+        <div class="people-container">
+            @for (emp of employeeList; track $index) {
+            <div class="people-item">
+                <div class="people-name">
+                    <img src="{{emp.imageUrl}}" alt="photo"/>
+                    <div class="name-info">
+                        <p>{{emp.firstName}} {{emp.lastName}}</p>
+                        <p>{{emp.roleName}}</p>
+                    </div>
+                </div>
+                <div class="id-no info-row">
+                    <span class="icon-id-card"></span>
+                    <p>{{emp.id}}</p>
+                </div>
+                <div class="mail-id info-row">
+                    <span class="icon-email"></span>
+                    <p>{{emp.emailId}}</p>
+                </div>
+                <div class="tech info-row">
+                    <span class="icon-team_1"></span>
+                    <p>{{emp.department}}</p>
+                </div>
+                <div class="location info-row">
+                    <span class="icon-location"></span>
+                    <p>{{emp.location}}</p>
+                </div>
+                <div class="next-label">
+                    <div class="view-label">
+                        <p>view</p>
+                        <span class="icon-Vector"></span>
+                    </div>
+                
+                </div>
+            </div>
+        }
+        </div>
+    </div>
+</div>

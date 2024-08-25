@@ -1,0 +1,85 @@
+/* You can add global styles to this file, and also import other style files */
+$font-family_1: roboto-normal;
+$font-family_2: 'icomoon';
+
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+	font-family: roboto-normal;
+	src: url(./assets/fonts/Roboto-Regular.ttf);
+}
+@font-face {
+	font-family: 'icomoon';
+	src: url('assets/fonts/icomoon.eot?v2b6h3');
+	src: url('assets/fonts/icomoon.eot?v2b6h3#iefix') format('embedded-opentype'), url('assets/fonts/icomoon.ttf?v2b6h3') format('truetype'), url('assets/fonts/icomoon.woff?v2b6h3') format('woff'), url('assets/fonts/icomoon.svg?v2b6h3#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
+html {
+	height: 100%;
+	--color1: rgb(106, 111, 116);
+	--color2: rgb(244, 72, 72);
+	--color3: rgb(73, 88, 118);
+	font-family: $font-family_1;
+	margin: 0px 10px;
+	overflow: hidden;
+}
+body {
+	height: 100%;
+	--color1: rgb(106, 111, 116);
+	--color2: rgb(244, 72, 72);
+	--color3: rgb(73, 88, 118);
+	font-family: $font-family_1;
+	margin: 0px 10px;
+	overflow: hidden;
+}
+[class^="icon-"] {
+	font-family: $font-family_2 !important;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+}
+[class*="icon-"] {
+    font-family: $font-family_2 !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+}
+
+.d-flex {
+	display: flex;
+}
+.flex-row {
+	flex-direction: row;
+}
+.flex-col {
+	flex-direction: column;
+}
+.jc-sb {
+	justify-content: space-between;
+}
+.w-18 {
+	width: 18%;
+}
+.w-80 {
+	width: 80%;
+}
+.r5 {
+	border-radius: 5px;
+}
+.hide {
+	display: none;
+}
+.w-5 {
+	width: 5% !important;
+}
+.w-93 {
+	width: 93% !important;
+}
+.h-40 {
+	height: 40px;
+}

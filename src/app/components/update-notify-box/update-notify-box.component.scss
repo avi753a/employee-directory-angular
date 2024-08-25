@@ -1,0 +1,59 @@
+$color_1: var(--color2);
+$color_2: var(--color1);
+$color_3: white;
+$background-color_1: rgb(254, 246, 246);
+$background-color_2: rgb(253, 230, 230);
+$background-color_3: var(--color2);
+
+* {
+	--color1: rgb(106, 111, 116);
+	--color2: rgb(244, 72, 72);
+}
+.update-notification-container {
+	background-color: $background-color_1;
+	width: 88%;
+	border-radius: 10px;
+	padding: 10px;
+	margin-bottom: 10px;
+	p {
+		margin: 10px 0px;
+	}
+}
+.update-heading {
+	color: $color_1;
+	font-size: 0.9rem;
+	font-weight: bold;
+	padding-left: 10px;
+}
+.update-text {
+	color: $color_2;
+	font-size: 0.9rem;
+	margin: 10px 0px;
+	padding-left: 10px;
+}
+.update-buttons-container {
+	flex-wrap: wrap;
+	width: 100%;
+	margin-bottom: 10px;
+	justify-content: space-around;
+}
+.dismiss {
+	width: 40%;
+	min-width: 50px;
+	display: inline-block;
+	font-size: 0.8rem;
+	background-color: $background-color_2;
+	border: none;
+	cursor: pointer;
+}
+.accept {
+	background-color: $background-color_3;
+	color: $color_3;
+	border: none;
+	outline: none;
+	width: 40%;
+	min-width: 50px;
+	display: inline-block;
+	font-size: 0.8rem;
+	cursor: pointer;
+}

@@ -1,0 +1,250 @@
+$color_1: #4c4c4c;
+$color_2: rgb(32, 106, 255);
+$color_3: rgb(69, 85, 115);
+$color_4: rgb(75, 85, 115);
+$font-family_1: "roboto-normal";
+$background-color_1: white;
+
+.icon-Edit {
+	&:before {
+		content: "\e922";
+	}
+}
+.icon-team_1 {
+	&:before {
+		content: "\e906";
+	}
+}
+.icon-Vector {
+	&:before {
+		content: "\e903";
+		color: $color_1;
+	}
+}
+.icon-location {
+	&:before {
+		content: "\e926";
+	}
+}
+.role-table-container {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	height: 450px;
+	overflow-y: hidden;
+	margin-top: 20px;
+	padding-right: 5px;
+	height: 470px;
+}
+.roles {
+	&:hover {
+		overflow-y: scroll;
+	}
+	&:active {
+		overflow-y: scroll;
+	}
+	&:focus {
+		overflow-y: scroll;
+	}
+}
+.role-items-container {
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: left;
+	margin-bottom: 20px;
+	overflow-y: scroll;
+}
+.role-item {
+	width: 32.285472%;
+	min-width: 190px;
+	display: flex;
+	flex-direction: column;
+	height: 230px;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	border-radius: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-right: 10px;
+}
+.role-title {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding-top: 45px;
+	h5 {
+		font-size: 1rem;
+		margin: 0px 0px;
+		padding-left: 20px;
+	}
+	img {
+		height: 25px;
+		width: 25px;
+		padding-right: 20px;
+	}
+	span {
+		font-size: 1.5rem;
+		color: $color_2;
+		margin-top: 0px;
+		margin-right: 20px;
+	}
+}
+.role-department {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	font-size: 1rem;
+	color: $color_3;
+	margin-top: 20px;
+	p {
+		margin: 0px 0px;
+		padding-right: 20px;
+	}
+	span {
+		font-size: 1.2rem;
+		margin-top: 2px;
+		margin-right: 7px;
+		color: $color_4;
+	}
+}
+.department-label {
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
+	padding-left: 20px;
+	img {
+		height: 20px;
+		width: 20px;
+		margin-right: 5px;
+	}
+	p {
+		margin: 0px 0px;
+	}
+}
+.role-location {
+	font-family: $font-family_1 !important;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	font-size: 1rem;
+	color: $color_3;
+	margin-top: 10px;
+	span {
+		font-size: 1.2rem;
+		margin-top: 2px;
+		margin-right: 7px;
+	}
+	p {
+		margin: 0px 0px;
+		padding-right: 20px;
+	}
+}
+.location-label {
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
+	padding-left: 20px;
+	img {
+		height: 20px;
+		width: 20px;
+		margin-right: 5px;
+	}
+	p {
+		margin: 0px 0px;
+	}
+}
+.role-number {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	font-size: 1rem;
+	color: $color_3;
+	margin-top: 10px;
+	p {
+		padding-left: 20px;
+		margin: 0px 0px;
+	}
+}
+.pic-group {
+	margin-right: 20px;
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	img {
+		height: 20px;
+		width: 20px;
+		border-radius: 10px;
+	}
+	p {
+		height: 20px;
+		width: 20px;
+		border-radius: 10px;
+		padding: 0px 0px;
+		font-size: 0.8rem;
+		background-color: $background-color_1;
+	}
+}
+#picitem-1 {
+	top: 0px;
+	left: 40px;
+	position: relative;
+}
+#picitem-2 {
+	top: 0px;
+	left: 30px;
+	position: relative;
+}
+#picitem-3 {
+	top: 0px;
+	left: 20px;
+	position: relative;
+}
+#picitem-4 {
+	top: 0px;
+	left: 10px;
+	position: relative;
+}
+#pic-count {
+	top: 0px;
+	left: 0px;
+	position: relative;
+}
+.view-employees {
+	display: flex;
+	flex-direction: row;
+	justify-content: end;
+	margin-top: 20px;
+	i {
+		margin: 0px 10px;
+		font-size: 1rem;
+		color: $color_3;
+	}
+	a {
+		text-decoration: none;
+		color: $color_3;
+	}
+}
+.view-label {
+	display: flex;
+	flex-direction: row;
+	justify-content: end;
+	margin-right: 20px;
+	p {
+		margin: 0px 0px;
+	}
+	img {
+		height: 20px;
+		width: 20px;
+		margin-left: 5px;
+	}
+}
+::-webkit-scrollbar {
+	width: 8px;
+	display: none;
+}
+.errorMsg {
+	text-align: center;
+	width: 80%;
+}

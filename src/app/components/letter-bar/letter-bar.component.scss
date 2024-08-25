@@ -1,0 +1,55 @@
+$color_1: wheat;
+$color_2: white;
+$color_3: #f44848;
+$background-color_1: rgb(234, 235, 238);
+$background-color_2: var(--color2);
+$background-color_3: #f44848;
+
+.icon-filter {
+	&:before {
+		content: "\e90b";
+		font-size: 1.2rem;
+		padding: 10px;
+	}
+}
+.letter-bar-container {
+	margin-top: 20px;
+	width: 100%;
+}
+.letter-buttons-container {
+	flex-wrap: wrap;
+	width: 95.6667%;
+	justify-content: space-between;
+}
+.letter-button {
+	height: 40px;
+	width: 2.666667%;
+	background-color: $background-color_1;
+	text-align: center;
+	cursor: pointer;
+	button {
+		height: 40px;
+		width: 100%;
+		background-color: $background-color_1;
+		text-align: center;
+		border: none;
+		cursor: pointer;
+		&:hover {
+			background-color: $background-color_2;
+			color: $color_1;
+		}
+		&:active {
+			background-color: $background-color_2;
+			color: $color_1;
+		}
+	}
+}
+.active {
+	background-color: $background-color_3 !important;
+	color: $color_2 !important;
+}
+.filter-icon {
+	color: $color_3;
+	display: flex;
+	align-items: center;
+}

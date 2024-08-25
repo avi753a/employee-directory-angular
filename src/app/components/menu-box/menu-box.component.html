@@ -1,0 +1,7 @@
+<div class="menu-container">
+    <p>{{menuInfo.name}}</p>
+    <div class="nav-group">@for (item of menuInfo.Navlist; track $index) {
+        <app-nav-item [navItemInfo]="item"></app-nav-item>
+    }</div>
+    
+</div>

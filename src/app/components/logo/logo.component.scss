@@ -1,0 +1,81 @@
+$color_1: #f44848;
+$color_2: #4d4d4d;
+$color_3: rgb(244, 72, 72);
+$color_4: rgb(77, 77, 77);
+
+/* -----------ICON CSS START--------------- */
+/* --------------ICON CSS END----------- */
+.icon-Logo_red {
+	&:before {
+		content: "\e92b";
+		color: $color_1;
+	}
+}
+.icon-t {
+	&:before {
+		content: "\e92c";
+		color: $color_2;
+	}
+}
+.icon-e {
+	&:before {
+		content: "\e92d";
+		color: $color_2;
+	}
+}
+.icon-z {
+	&:before {
+		content: "\e92e";
+		color: $color_2;
+	}
+}
+.icon-o {
+	&:before {
+		content: "\e92f";
+		color: $color_2;
+	}
+}
+.icon-TezoLogo {
+	font-size: 1.8rem;
+}
+.path1 {
+	&:before {
+		content: "\e924";
+		color: $color_3;
+	}
+}
+.path2 {
+	&:before {
+		content: "\e930";
+		margin-left: -3.625em;
+		color: $color_4;
+	}
+}
+.path3 {
+	&:before {
+		content: "\e931";
+		margin-left: -3.625em;
+		color: $color_4;
+	}
+}
+.path4 {
+	&:before {
+		content: "\e932";
+		margin-left: -3.625em;
+		color: $color_4;
+	}
+}
+.path5 {
+	&:before {
+		content: "\e933";
+		margin-left: -3.625em;
+		color: $color_4;
+	}
+}
+.logo-container {
+	margin: 30px 0px 40px 10px;
+	i {
+		font-size: 2rem;
+		letter-spacing: -100px;
+	}
+}

@@ -1,0 +1,8 @@
+<div class="navitem-container d-flex flex-row">
+    <div class="navitem-content d-flex flex-row r5" (click)="loadPage()" [class.active]="isActive">
+        <span class={{navItemInfo.iconClass}}></span>
+        <p [class.hide]="navbar_compressed">{{navItemInfo.name}}</p>
+    </div>
+    <div class="navitem-active-bar" [class.active]="isActive">
+
+    </div>

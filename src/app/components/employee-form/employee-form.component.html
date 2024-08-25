@@ -1,0 +1,139 @@
+<div class="employee-form-container">
+  <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+    <div class="employee-form">
+      <h5>Add Employee</h5>
+      <div class="form-container">
+        <div class="image-box">
+          <div>
+            <img id="profile" alt="profile" [src]="ImageAdderss" #profilepic>
+            <p id="editImage">Edit</p>
+          </div>
+          <input type="file" id="upload_image" accept="image/png, image/jpeg" (change)="onFileSelected($event)">
+        </div>
+        <div class="info-box">
+          <p>Personal Information</p>
+          <div class="id-input" [class.hide]="isCreateMode">
+            <label for="id">Emp No*</label><br>
+            <input type="text" id="id" formControlName="id" placeholder="Text" required class="focusblue" #idInput/>
+          </div>
+          <div class="personal-details">
+            <div>
+              <label for="firstName">First Name*</label><br>
+              <input type="text" id="firstName" formControlName="firstName" placeholder="Text" required />
+              <div *ngIf="formValue['firstName'].invalid && formValue['firstName'].touched" class="errorInfo">
+                <div *ngIf="formValue['firstName'].hasError('required')" class="errorInfo"><small> Name is required.</small>
+                </div>
+              </div>
+            </div>
+            <div>
+              <label for="lastName">Last Name*</label><br>
+              <input type="text" id="lastName" formControlName="lastName" placeholder="Text" required />
+              <div *ngIf="formValue['lastName'].invalid && formValue['lastName'].touched" class="errorInfo">
+                <div *ngIf="formValue['lastName'].hasError('required')" class="errorInfo">Last Name is required.</div>
+              </div>
+            </div>
+            <div>
+              <label for="dateOfBirth">Date of Birth</label><br>
+              <input type="date" id="dateOfBirth" formControlName="dateOfBirth" placeholder="Date of Birth" required />
+              <div *ngIf="formValue['dateOfBirth'].invalid && formValue['dateOfBirth'].touched" class="errorInfo">
+                <div *ngIf="formValue['dateOfBirth'].hasError('required')" class="errorInfo">Date of Birth is required.</div>
+              </div>
+            </div>
+            <div>
+              <label for="emailId">Email Id*</label><br>
+              <input type="email" id="emailId" formControlName="emailId" placeholder="joe.j@technovert.com" required />
+              <div *ngIf="formValue['emailId'].invalid && formValue['emailId'].touched" class="errorInfo">
+                <div *ngIf="formValue['emailId'].hasError('required')" class="errorInfo">Email Id is required.</div>
+                <div *ngIf="formValue['emailId'].hasError('email')" class="errorInfo">Invalid Email Id.</div>
+              </div>
+            </div>
+            <div>
+              <label for="mobileNo">Mobile Number*</label><br>
+              <input type="tel" id="mobileNo" formControlName="mobileNo" placeholder="0000000000" required />
+              <div *ngIf="formValue['mobileNo'].invalid && formValue['mobileNo'].touched" class="errorInfo">
+                <div *ngIf="formValue['mobileNo'].hasError('required')" class="errorInfo">Mobile Number is required.</div>
+              </div>
+            </div>
+          </div>
+          <div class="employment-heading">
+            <p>Employment Information</p>
+          </div>
+          <div class="employment-details">
+            <div [class.hide]="isCreateMode">
+              <label for="dateOfJoining">Joining Date*</label><br>
+              <input type="text" id="dateOfJoining" formControlName="dateOfJoining" placeholder="12/08/2023" required />
+              <div *ngIf="formValue['dateOfJoining'].invalid && formValue['dateOfJoining'].touched" class="errorInfo">
+                <div *ngIf="formValue['dateOfJoining'].hasError('required')" class="errorInfo">Joining Date is required.</div>
+              </div>
+            </div>
+            <div>
+              <label for="location">Location</label><br>
+              <select name="location" id="location" formControlName="location">
+                <option value="" selected disabled>Search</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Mumbai">Mumbai</option>
+              </select>
+              <div *ngIf="formValue['location'].invalid && formValue['location'].touched" class="errorInfo">
+                <div *ngIf="formValue['location'].hasError('required')" class="errorInfo">Location is required.</div>
+              </div>
+            </div>
+            <div>
+              <label for="job-title">Job Title</label><br>
+              <select name="roleName" id="job-title" formControlName="roleName">
+                <option value="" selected disabled>Search</option>
+                @for (roleitem of roleList; track $index) {
+                <option value={{roleitem.id}}>{{roleitem.name}}</option>
+                }
+              </select>
+              <div *ngIf="formValue['roleName'].invalid && formValue['roleName'].touched" class="errorInfo">
+                <div *ngIf="formValue['roleName'].hasError('required')" class="errorInfo">Job Title is required.</div>
+              </div>
+            </div>
+            <div>
+              <label for="department">Department</label><br>
+              <select name="department" id="department" formControlName="department">
+                <option value="" selected disabled>Search</option>
+                <option value="Product Dev">Product Dev</option>
+                <option value="Design">Design</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Human Resource">Human Resource</option>
+              </select>
+              <div *ngIf="formValue['department'].invalid && formValue['department'].touched" class="errorInfo">
+                <div *ngIf="formValue['department'].hasError('required')" class="errorInfo">Department is required.</div>
+              </div>
+            </div>
+            <div>
+              <label for="job-manager">Assign Manager</label><br>
+              <select name="managerName" id="job-manager" formControlName="managerName">
+                <option value="" disabled selected>Search</option>
+                <option value="Manager1">Manager1</option>
+                <option value="Manager2">Manager2</option>
+              </select>
+              <div *ngIf="formValue['managerName'].invalid && formValue['managerName'].touched" class="errorInfo">
+                <div *ngIf="formValue['managerName'].hasError('required')" class="errorInfo">Assign Manager is required.</div>
+              </div>
+            </div>
+            <div>
+              <label for="job-project">Assign Project</label><br>
+              <select name="projectName" id="job-project" formControlName="projectName">
+                <option value="" disabled selected>Search</option>
+                <option value="UI/UX">UI/UX</option>
+              </select>
+              <div *ngIf="formValue['projectName'].invalid && formValue['projectName'].touched" class="errorInfo">
+                <div *ngIf="formValue['projectName'].hasError('required')" class="errorInfo">Assign Project is required.</div>
+              </div>
+            </div>
+          </div>
+          <div class="employment-buttons">
+            <div>
+              <button type="button" id="cancel" (click)="onCancel()">Cancel</button>
+              <button type="submit" id="submitinfo">Add Employee</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

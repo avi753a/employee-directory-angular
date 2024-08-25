@@ -1,0 +1,15 @@
+<div class="page-info-container d-flex flex-row">
+    <div class="page-info-text clr1">
+        <h3>{{pageInfo.pageHeading}}</h3>
+        <p class="fs-08">{{pageInfo.pageDescription}}</p>
+    </div>
+    <div class="page-info-buttons flex-row">
+        <button class="btn-export fs-08 bnone clr1 cpoint" [class.hide]="!pageInfo.pageIsExportable" (click)="downloadCSV()">
+            <div class="flex-row">
+                <span class="icon-Export"></span>
+                <p>EXPORT</p>
+            </div>
+        </button>
+        <button class="btn-add fs-08 br-5 bnone cpoint" (click)="openForm()"><span class="icon-plus"></span>{{pageInfo.pageAddButtonName}}</button>
+    </div>
+</div>

@@ -1,0 +1,106 @@
+
+.icon-dashboard:before {
+    content: "\e904";
+  }
+  .icon-team_3:before {
+    content: "\e907";
+  }
+  .icon-location:before {
+    content: "\e926";
+  }
+  .icon-team_red:before {
+    content: "\e927";
+    color: #f44848;
+  }
+  .icon-team_1:before {
+    content: "\e906";
+  }
+  .icon-handle:before {
+    content: "\e900";
+  }
+  .icon-Edit:before {
+    content: "\e922";
+  }
+  .icon-Dashboard:before {
+    content: "\e923";
+  }
+  .icon-Vector:before {
+    content: "\e903";
+    color: #4c4c4c;
+  }
+  .icon-id-card:before {
+    content: "\e905";
+  }
+  .icon-email:before {
+    content: "\e921";
+  }
+  .icon-unfold:before {
+    content: "\e90a";
+  }
+  .icon-filter:before {
+    content: "\e90b";
+    color: #f44848;
+  }
+  .icon-Export:before {
+    content: "\e90c";
+  }
+  .icon-arrow-turn-left--down:before {
+    content: "\e90d";
+  }
+  .icon-Roles:before {
+    content: "\e90e";
+  }
+  .icon-ctrl-1:before {
+    content: "\e90f";
+  }
+  .icon-assign-user:before {
+    content: "\e914";
+  }
+  .navitem-content{
+    align-items: center;
+    --color1: rgb(106, 111, 116);
+    --color2: rgb(244, 72, 72);
+    --color3:rgb(73, 88, 118);
+    height: 40px;
+    padding-left: 10px;
+    font-size: 1rem;
+    color: var(--color3);
+    width: 90.5%;
+  }
+  .navitem-content p{
+    padding-left: 10px;
+    margin: 0px 0px;
+  }
+  .navitem-content:hover{
+color: var(--color2); 
+background-color: rgb(253, 233, 233);
+ }
+ .navitem-content:hover + .navitem-active-bar {
+  display: block;
+  margin-left: 5px;
+}
+.navitem-active-bar .active{
+  display: block;
+  margin-left: 5px;
+}
+.compressed{
+    justify-content: center;
+}
+.navitem-active-bar {
+  border: 3px solid var(--color2);
+  border-radius: 2px;
+  display: none;
+}
+.navitem-container{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.navitem-content span{
+  font-size: 1.2rem;
+}
+.active{
+  color: var(--color2); 
+background-color: rgb(253, 233, 233);
+}

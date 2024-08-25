@@ -1,0 +1,18 @@
+<div class="main-container d-flex flex-row jc-sb">
+    <div class="left-content d-flex flex-col jc-sb" [class.w-5]="navbar_compressed">
+      <div>
+            <app-logo></app-logo>
+            <img src="../../assets/images/handle.png" alt="expand" class="expand-image" (click)="toggleNav()">
+        @for (item of menuitemlist; track $index) {
+            <app-menu-box [menuInfo]="item"></app-menu-box>
+        }
+        </div>
+        <app-update-notify-box></app-update-notify-box>
+      </div>
+    <div class=" right-content" [class.w-93]="navbar_compressed">
+      <app-search-bar></app-search-bar>
+      <router-outlet></router-outlet>
+    </div>
+    <app-toast></app-toast>
+  </div>
+  

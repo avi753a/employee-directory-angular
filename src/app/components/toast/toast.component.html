@@ -1,0 +1,12 @@
+<div class="toast" #toast [style.border-left]="color">
+    <div class="toast-content" >
+        <i class="fas fa-solid fa-check check" [style.background-color]="color"></i>
+
+        <div class="message">
+            <span class="text text-1">{{message}}</span>
+            <span class="text text-2">{{messageText}}</span>
+        </div>
+    </div>
+    <i class="fa-solid fa-xmark close" #closeIcon>x</i>
+    <div class="progress" #progress [style.background-color]="color"></div>
+</div>

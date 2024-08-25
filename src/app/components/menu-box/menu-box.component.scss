@@ -1,0 +1,21 @@
+$color_1: var(--color1);
+
+.menu-container {
+	p {
+		--color1: rgb(106, 111, 116);
+		color: $color_1;
+		margin: 0px 0px;
+		font-size: 0.8rem;
+		margin-right: 15px;
+		padding-left: 10px;
+		width: 70%;
+		overflow: hidden;
+	}
+	margin-top: 20px;
+	width: 100%;
+}
+.nav-group {
+	margin-top: 10px;
+	width: 100%;
+	margin-top: 20px;
+}
